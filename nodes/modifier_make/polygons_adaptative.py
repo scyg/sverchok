@@ -69,7 +69,7 @@ class AdaptivePolsNode(bpy.types.Node, SverchCustomTreeNode):
         return loc + nor*v[2]*z
 
     def process(self):
-        # достаём два слота - вершины и полики
+        # достаём два слота - вершины и полики / we get two slots(?) - vertices and faces
         if all(s.is_linked for s in self.inputs[:-1]):
             if self.inputs['Z_Coef'].is_linked:
                 z_coef = self.inputs['Z_Coef'].sv_get()[0]
